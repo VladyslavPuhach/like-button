@@ -1,0 +1,75 @@
+<html style="height: 100%; background-color: #191919; color: #4F54D2;">
+  <head>
+    <style>
+      /* Колір іконок лайків */
+      div[data-lyket-id="it-poland-community-likes"] svg {
+        fill: #4F54D2 !important;
+      }
+
+      /* Колір іконок дизлайків */
+      div[data-lyket-id="it-poland-community-dislikes"] svg {
+        fill: #4F54D2 !important;
+      }
+
+      /* Видалення зеленого фону при натисканні */
+      .lyket-vote-button-active {
+        background-color: transparent !important;
+      }
+    </style>
+  </head>
+  <body style="text-align: center; font-family: Arial, sans-serif;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 50px; padding: 20px; background-color: #191919; border-radius: 10px;">
+
+      <!-- Кнопка Лайків -->
+      <div style="text-align: center;">
+        <div
+          data-lyket-type="like"
+          data-lyket-id="it-poland-community-likes"
+          data-lyket-template="simple"
+          style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+        <p style="margin: 0; color: #4F54D2;">Подобається</p>
+      </div>
+
+      <!-- Кнопка Дизлайків -->
+      <div style="text-align: center;">
+        <div
+          data-lyket-type="like"
+          data-lyket-id="it-poland-community-dislikes"
+          data-lyket-template="simple"
+          style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+        <p style="margin: 0; color: #4F54D2;">Не подобається</p>
+      </div>
+
+    </div>
+
+    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_3f4c9673d3d246b02833ed03426545"></script>
+
+    <script>
+      // Функція для зміни кольору суми
+      function updateVoteColors() {
+        // Лайки
+        const likeCount = document.querySelector(
+          'div[data-lyket-id="it-poland-community-likes"] .lyket-vote-count'
+        );
+        if (likeCount) {
+          likeCount.style.color = '#4F54D2'; // Колір суми лайків
+        }
+
+        // Дизлайки
+        const dislikeCount = document.querySelector(
+          'div[data-lyket-id="it-poland-community-dislikes"] .lyket-vote-count'
+        );
+        if (dislikeCount) {
+          dislikeCount.style.color = '#4F54D2'; // Колір суми дизлайків
+        }
+      }
+
+      // Чекаємо завантаження кнопок і оновлюємо їхній стиль
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(updateVoteColors, 2000); // Додаємо паузу для завантаження кнопок
+      });
+    </script>
+  </body>
+</html>
