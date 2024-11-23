@@ -1,0 +1,62 @@
+<html style="height: 100%; background-color: #191919; color: white;">
+  <head>
+    <style>
+      /* Колір тексту суми для лайків */
+      div[data-lyket-id="it-poland-community-likes"] .lyket-vote-count,
+      div[data-lyket-id="it-poland-community-likes"] .lyket-vote-count span {
+        color: white !important; /* Колір тексту суми лайків */
+      }
+
+      /* Колір тексту суми для дизлайків */
+      div[data-lyket-id="it-poland-community-dislikes"] .lyket-vote-count,
+      div[data-lyket-id="it-poland-community-dislikes"] .lyket-vote-count span {
+        color: white !important; /* Колір тексту суми дизлайків */
+      }
+
+      /* Колір іконок лайків */
+      div[data-lyket-id="it-poland-community-likes"] svg {
+        fill: white !important; /* Білий колір іконки лайків */
+      }
+
+      /* Колір іконок дизлайків */
+      div[data-lyket-id="it-poland-community-dislikes"] svg {
+        fill: white !important; /* Білий колір іконки дизлайків */
+      }
+
+      /* Видалення активного зеленого фону */
+      div[data-lyket-id="it-poland-community-likes"] .lyket-vote-button-active,
+      div[data-lyket-id="it-poland-community-dislikes"] .lyket-vote-button-active {
+        background-color: transparent !important; /* Без фону при натисканні */
+      }
+    </style>
+  </head>
+  <body style="text-align: center; font-family: Arial, sans-serif;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 50px; padding: 20px; background-color: #191919; border-radius: 10px;">
+
+      <!-- Кнопка Лайків -->
+      <div style="text-align: center;">
+        <div
+          data-lyket-type="like"
+          data-lyket-id="it-poland-community-likes"
+          data-lyket-template="simple"
+          style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+        <p style="margin: 0; color: white;">Сподобалося</p>
+      </div>
+
+      <!-- Кнопка Дизлайків -->
+      <div style="text-align: center;">
+        <div
+          data-lyket-type="like"
+          data-lyket-id="it-poland-community-dislikes"
+          data-lyket-template="simple"
+          style="display: flex; flex-direction: column; align-items: center;">
+        </div>
+        <p style="margin: 0; color: white;">Не сподобалося</p>
+      </div>
+
+    </div>
+
+    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_3f4c9673d3d246b02833ed03426545"></script>
+  </body>
+</html>
